@@ -1,0 +1,26 @@
+{
+  "name": "sw_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "outbound_call.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-outbound": "node outbound_call.js",
+    "start-inbound": "node inbound_call.js",
+    "start-record": "node record_call.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsowald/sw_testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rsowald/sw_testing/issues"
+  },
+  "homepage": "https://github.com/rsowald/sw_testing#readme",
+  "dependencies": {
+    "@signalwire/node": "^2.5.0",
+    "@signalwire/realtime-api": "^3.3.1"
+  }
+}
