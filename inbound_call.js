@@ -16,8 +16,9 @@ const consumer = new RelayConsumer({
     };
     const prompt = await call.promptTTS(collect);
     if (prompt.successful) {
+      const result = prompt.result;
       await call.playTTS({
-        text: `You entered: ${prompt.result}. Thanks and goodbye!`,
+        text: "You entered: " + result + ". Thanks and goodbye!",
       });
     }
     await call.hangup();
@@ -51,7 +52,7 @@ consumer.run();
 //     const prompt = await call.promptTTS(collect);
 //     const { digits } = await prompt.waitForResult();
 //     const confirm = await call.playTTS({
-//       text: `You entered ${digits}. Thank you and goodbye!`,
+//       text: "You entered " + digits + ". Thank you and goodbye!",
 //       gender: "male",
 //     });
 //     await confirm.waitForEnded();

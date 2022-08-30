@@ -10,7 +10,7 @@ const consumer = new RelayConsumer({
     const customerMessage = message.body;
     const context = message.context;
     const sendResult = await consumer.client.messaging.send({
-      context: "office",
+      context: "support",
       from: "+YYYYYYYYYY", // Must be a number in your SignalWire Space
       to: "+XXXXXXXXXX", // support specialist number
       body: `You received a ${context} message from ${customer}: "${customerMessage}". Please respond.`,
@@ -18,7 +18,7 @@ const consumer = new RelayConsumer({
     if (sendResult.successful) {
       console.log("Message ID:", sendResult.messageId);
     } else {
-      console.log(sendResult.errors);
+      console.log("Error sending message:", sendResult.reason);
     }
   },
 });
